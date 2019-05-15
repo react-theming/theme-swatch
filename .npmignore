@@ -1,2 +1,5 @@
 /src
 /.storybook
+/.vscode
+/node_modules
+/stories

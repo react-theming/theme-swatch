@@ -2,10 +2,6 @@ import React from 'react';
 import { styledComponents } from './ThemeSwatch.styled';
 
 class ThemeSwatch extends React.Component {
-  constructor(...props) {
-    super(...props);
-  }
-
   sC = styledComponents();
 
   renderRow = (colors, rowInd) => {
@@ -13,7 +9,8 @@ class ThemeSwatch extends React.Component {
       <this.sC.Row key={rowInd}>
         {colors.map((col, ind) => (
           <this.sC.Pixel
-            key={ind}
+            // eslint-disable-next-line react/no-array-index-key
+            key={`${col}${ind}`}
             style={{ backgroundColor: col, height: 40 }}
           />
         ))}
@@ -29,7 +26,7 @@ class ThemeSwatch extends React.Component {
 
   renderNull = () => {
     const matrix = new Array(4).fill(
-      new Array(4).fill('rgba(197, 196, 196, 0.74)')
+      new Array(4).fill('rgba(197, 196, 196, 0.74)'),
     );
     return this.renderMatrix(matrix);
   };

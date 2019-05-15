@@ -1,8 +1,11 @@
 import React from 'react';
 import { styledComponents } from './ThemeSwatch.styled';
+import { createMatrix } from './color-model';
 
 class ThemeSwatch extends React.Component {
   sC = styledComponents();
+
+  matrix = createMatrix(this.props.theme);
 
   renderRow = (colors, rowInd) => {
     return (
@@ -32,37 +35,7 @@ class ThemeSwatch extends React.Component {
   };
 
   render() {
-    const { theme } = this.props;
-    if (!theme) return this.renderNull();
-    const { palette } = theme;
-    if (!palette) return this.renderNull();
-    const matrix = [
-      [
-        palette.primary.light,
-        palette.primary.light,
-        palette.primary.contrastText,
-        palette.primary.dark,
-      ],
-      [
-        palette.primary.light,
-        palette.primary.main,
-        palette.primary.main,
-        palette.primary.dark,
-      ],
-      [
-        palette.secondary.dark,
-        palette.secondary.main,
-        palette.secondary.main,
-        palette.secondary.light,
-      ],
-      [
-        palette.secondary.dark,
-        palette.secondary.contrastText,
-        palette.secondary.light,
-        palette.secondary.light,
-      ],
-    ];
-    return this.renderMatrix(matrix);
+    return this.renderMatrix(this.matrix);
   }
 }
 

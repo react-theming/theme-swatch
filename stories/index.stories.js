@@ -26,13 +26,18 @@ const themePreview = theme => ({
   accent: [],
   background: [theme.backgroundColor],
 });
-const UniSwatch = createSwatch(styled, themePreview);
+const UniSwatch = createSwatch(styled);
 const unitheme = {
   mainColor: 'red',
   textColor: 'rgba(0,0,0,0.3)',
   backgroundColor: 'white',
 };
-
+const preparedTheme = {
+  main: ['red'],
+  accent: ['pink'],
+  // text: ['gray'],
+  // background: ['white'],
+};
 
 const bigPreview = theme => ({
   main: [theme.mainColor],
@@ -58,13 +63,120 @@ const BigTheme = {
   darkGrey: 'rgb(137,137,137)',
 };
 
-storiesOf('Theme Swatch with Big Themes', module)
-  .add('big', () => <BigSwatch theme={BigTheme} size={128} />)
-  .add('small', () => <BigSwatch theme={BigTheme} size={32} />);
-
 storiesOf('Theme Swatch with Universal Themes', module)
-  .add('big', () => <UniSwatch theme={unitheme} size={128} />)
-  .add('small', () => <UniSwatch theme={unitheme} size={32} />);
+  .add('T1', () => (
+    <UniSwatch
+      theme={{
+        main: ['red'],
+        // accent: ['pink'],
+        // text: ['gray'],
+        // background: ['white'],
+      }}
+      size={128}
+    />
+  ))
+  .add('T2', () => (
+    <UniSwatch
+      theme={{
+        main: ['red'],
+        accent: ['pink'],
+        // text: ['gray'],
+        // background: ['white'],
+      }}
+      size={128}
+    />
+  ))
+  .add('T3', () => (
+    <UniSwatch
+      theme={{
+        main: ['red'],
+        accent: ['pink'],
+        text: ['gray'],
+        // background: ['white'],
+      }}
+      size={128}
+    />
+  ))
+  .add('T4', () => (
+    <UniSwatch
+      theme={{
+        main: ['red'],
+        accent: ['pink'],
+        text: ['gray'],
+        background: ['white'],
+      }}
+      size={128}
+    />
+  ));
+
+storiesOf('Theme Swatch with Big Universal Themes', module)
+  .add('T1', () => (
+    <UniSwatch
+      theme={{
+        main: ['red', 'brown'],
+        // accent: ['pink'],
+        // text: ['gray'],
+        // background: ['white'],
+      }}
+      size={128}
+    />
+  ))
+  .add('T2', () => (
+    <UniSwatch
+      theme={{
+        main: ['red', 'brown', 'yellow'],
+        accent: ['pink'],
+        // text: ['gray'],
+        // background: ['white'],
+      }}
+      size={128}
+    />
+  ))
+  .add('T3', () => (
+    <UniSwatch
+      theme={{
+        main: ['red', 'brown', 'yellow', 'blue'],
+        // accent: ['pink'],
+        // text: ['gray'],
+        // background: ['white'],
+      }}
+      size={128}
+    />
+  ))
+  .add('T4', () => (
+    <UniSwatch
+      theme={{
+        main: [
+          'red',
+          'brown',
+          'yellow',
+          'green',
+          '#caf',
+          '#f0c',
+          '#e0f',
+          '#0af',
+          '#00c',
+          '#0ff',
+        ],
+        // accent: ['pink'],
+        // text: ['gray'],
+        // background: ['white'],
+      }}
+      size={128}
+    />
+  ));
+
+storiesOf('Material like Themes', module).add('T1', () => (
+  <UniSwatch
+    theme={{
+      main: ['#a0f', '#f8f', '#408'],
+      accent: ['#f09', '#fe6', '#c04'],
+      text: ['#444'],
+      background: ['white'],
+    }}
+    size={128}
+  />
+));
 
 // storiesOf('Theme Swatch with Material Themes', module)
 //   .add('big', () => <ThemeSwatch theme={{ palette }} size={128} />)

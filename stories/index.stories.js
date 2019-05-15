@@ -20,6 +20,6 @@ const palette = {
   },
 };
 
-storiesOf('Theme Swatch', module)
+storiesOf('Theme Swatch with Material Themes', module)
   .add('big', () => <ThemeSwatch theme={{ palette }} size={128} />)
   .add('small', () => <ThemeSwatch theme={{ palette }} size={32} />);

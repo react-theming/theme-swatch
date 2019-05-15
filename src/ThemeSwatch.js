@@ -69,33 +69,4 @@ class ThemeSwatch extends React.Component {
   }
 }
 
-/*
-export default withStyles({
-  root: {
-    borderRadius: '10%',
-    // border: '#8c8c8c 1px solid',
-    overflow: 'hidden',
-    // width: 128,
-    // height: 128,
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-  },
-  row: {
-    display: 'flex',
-    width: '100%',
-    height: 1,
-    flexGrow: 1,
-  },
-  pixel: {
-    backgroundColor: 'rgba(0,0,0,0)',
-    width: '100%',
-    height: '100%',
-    borderRight: '1px inset rgba(0,0,0,0.1)',
-    borderBottom: '1px solid rgba(0,0,0,0.1)'
-  },
-})(ThemeAva);
-*/
 export default ThemeSwatch;

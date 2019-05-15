@@ -1,19 +1,12 @@
-import React from 'react';
-
 let styled = () => 'Please Provide styled function';
 
 export const setStyled = fn => {
   styled = fn;
 };
 export const styledComponents = () => {
-  console.log('TCL: styled', styled);
-
   const Paper = styled.div(({ size }) => ({
     borderRadius: '10%',
-    // border: '#8c8c8c 1px solid',
     overflow: 'hidden',
-    // width: 128,
-    // height: 128,
     width: size || '100%',
     height: size || '100%',
     display: 'flex',

@@ -1718,6 +1718,14 @@
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-12.0.12.tgz#45dd1d0638e8c8f153e87d296907659296873916"
   integrity sha512-SOhuU4wNBxhhTHxYaiG5NY4HBhDIDnJF60GU+2LqHAdKKer86//e4yg69aENCtQ04n0ovz+tq2YPME5t5yp4pw==
 
+"@usulpro/package-prepare@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@usulpro/package-prepare/-/package-prepare-1.0.5.tgz#283cd63a991cf4de6634b5ebb0b21b078be02971"
+  integrity sha512-ZgbNHL2R4PkvlI4TIsjmDFLhyYI/CCpEal0eEy/14wlGHYmoCIIeSUwVslzIpwqjYqMx8RJmtpJOPLsfgJuSxA==
+  dependencies:
+    chalk "^2.4.2"
+    shelljs "^0.8.3"
+
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"
@@ -8704,7 +8712,7 @@ shell-quote@1.6.1:
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
 
-shelljs@^0.8.2:
+shelljs@^0.8.2, shelljs@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.3.tgz#a7f3319520ebf09ee81275b2368adb286659b097"
   integrity sha512-fc0BKlAWiLpwZljmOvAOTE/gXawtCoNrP5oaY7KIaQbbyHeQVg01pSEuEGvGh3HEdBU4baCD7wQBwADmM/7f7A==

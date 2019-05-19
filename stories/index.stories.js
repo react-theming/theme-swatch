@@ -1,76 +1,18 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 import React from 'react';
 import styled from '@emotion/styled';
 
 import { storiesOf } from '@storybook/react';
 import { createSwatch } from '../src';
 
-const ThemeSwatch = createSwatch(styled);
-const palette = {
-  primary: {
-    main: '#446644',
-    light: '#668866',
-    dark: '#334433',
-    contrastText: 'black',
-  },
-  secondary: {
-    main: '#223366',
-    light: '#445566',
-    dark: '#223344',
-    contrastText: 'white',
-  },
-};
-
-const themePreview = theme => ({
-  main: [theme.mainColor],
-  text: [theme.textColor],
-  accent: [],
-  background: [theme.backgroundColor],
-});
 const UniSwatch = createSwatch(styled);
-const unitheme = {
-  mainColor: 'red',
-  textColor: 'rgba(0,0,0,0.3)',
-  backgroundColor: 'white',
-};
-const preparedTheme = {
-  main: ['red'],
-  accent: ['pink'],
-  // text: ['gray'],
-  // background: ['white'],
-};
-
-const bigPreview = theme => ({
-  main: [theme.mainColor],
-  text: [theme.textColor],
-  accent: [],
-  background: [theme.backgroundColor],
-});
-const BigSwatch = createSwatch(styled, bigPreview);
-const BigTheme = {
-  white: 'rgb(255, 255, 255)',
-  black: 'rgb(0, 0, 0)',
-  grey: 'rgb(248, 248, 248)',
-  companyColor: 'rgb(41, 120, 253)',
-  border: 'rgb(235, 235, 235)',
-  searchLoupe: 'rgb(142, 142, 147)',
-  transparent: 'transparent',
-  badgeBackgroundColor: 'rgb(255, 59, 48)',
-  sidebarBackgroundColor: 'rgb(240, 240, 240)',
-  pink: 'rgb(245,95,152)',
-  active: 'rgb(51, 51, 51)',
-  inactive: 'rgb(190, 190, 190)',
-  greyText: 'rgb(235, 235, 235)',
-  darkGrey: 'rgb(137,137,137)',
-};
 
 storiesOf('Theme Swatch with Universal Themes', module)
   .add('T1', () => (
     <UniSwatch
       theme={{
         main: ['red'],
-        // accent: ['pink'],
-        // text: ['gray'],
-        // background: ['white'],
       }}
       size={128}
     />
@@ -80,8 +22,6 @@ storiesOf('Theme Swatch with Universal Themes', module)
       theme={{
         main: ['red'],
         accent: ['pink'],
-        // text: ['gray'],
-        // background: ['white'],
       }}
       size={128}
     />
@@ -92,7 +32,6 @@ storiesOf('Theme Swatch with Universal Themes', module)
         main: ['red'],
         accent: ['pink'],
         text: ['gray'],
-        // background: ['white'],
       }}
       size={128}
     />
@@ -114,9 +53,6 @@ storiesOf('Theme Swatch with Big Universal Themes', module)
     <UniSwatch
       theme={{
         main: ['red', 'brown'],
-        // accent: ['pink'],
-        // text: ['gray'],
-        // background: ['white'],
       }}
       size={128}
     />
@@ -126,8 +62,6 @@ storiesOf('Theme Swatch with Big Universal Themes', module)
       theme={{
         main: ['red', 'brown', 'yellow'],
         accent: ['pink'],
-        // text: ['gray'],
-        // background: ['white'],
       }}
       size={128}
     />
@@ -136,9 +70,6 @@ storiesOf('Theme Swatch with Big Universal Themes', module)
     <UniSwatch
       theme={{
         main: ['red', 'brown', 'yellow', 'blue'],
-        // accent: ['pink'],
-        // text: ['gray'],
-        // background: ['white'],
       }}
       size={128}
     />
@@ -158,9 +89,6 @@ storiesOf('Theme Swatch with Big Universal Themes', module)
           '#00c',
           '#0ff',
         ],
-        // accent: ['pink'],
-        // text: ['gray'],
-        // background: ['white'],
       }}
       size={128}
     />
@@ -178,6 +106,38 @@ storiesOf('Material like Themes', module).add('T1', () => (
   />
 ));
 
-// storiesOf('Theme Swatch with Material Themes', module)
-//   .add('big', () => <ThemeSwatch theme={{ palette }} size={128} />)
-//   .add('small', () => <ThemeSwatch theme={{ palette }} size={32} />);
+const materialPreview = ({ palette }) => ({
+  main: [palette.primary.main, palette.primary.light, palette.primary.dark],
+  text: [palette.primary.contrastText, palette.secondary.contrastText],
+  accent: [
+    palette.secondary.main,
+    palette.secondary.light,
+    palette.secondary.dark,
+  ],
+  background: [],
+});
+
+const ThemeSwatch = createSwatch(styled, materialPreview);
+const palette = {
+  primary: {
+    main: '#3f51b5',
+    light: 'rgb(101, 115, 195)',
+    dark: 'rgb(44, 56, 126)',
+    contrastText: '#fff',
+  },
+  secondary: {
+    main: '#f50057',
+    light: 'rgb(247, 51, 120)',
+    dark: 'rgb(171, 0, 60)',
+    contrastText: '#fff',
+  },
+};
+
+storiesOf('Material UI Themes', module).add('T1', () => (
+  <ThemeSwatch
+    theme={{
+      palette,
+    }}
+    size={128}
+  />
+));

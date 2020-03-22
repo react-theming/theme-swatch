@@ -65,14 +65,12 @@ export const fillPixels = (fields, theme) => {
     const colorLength = colorRow.length;
     const [start, end] = keyFields;
     const pixelsRow = pixelsOrder.slice(start, end + 1);
-    console.log('pixelsRow', key, colorRow[0], pixelsRow);
     pixelsRow.forEach(([i, j], ind) => {
       const color = pickColorFromRow(colorRow, pixelsRow, ind);
       if (color) {
         filledMatrix[i][j] = color;
       }
     });
-    console.log('filledMatrix', filledMatrix);
   });
 
   return filledMatrix;

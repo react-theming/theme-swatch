@@ -2,13 +2,13 @@
 
 # @react-theming/theme-swatch
 
-Install
+## Install
 
 ```shell
 npm i @react-theming/theme-swatch
 ```
 
-Usage
+## Usage
 
 ```js
 import { createSwatch } from '@react-theming/theme-swatch';

@@ -27,6 +27,7 @@ export const styledComponents = () => {
     height: '100%',
     borderRight: '1px inset rgba(0,0,0,0.1)',
     borderBottom: '1px solid rgba(0,0,0,0.1)',
+    label: 'pixel',
   });
 
   return { Paper, Row, Pixel };

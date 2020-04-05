@@ -14,7 +14,7 @@ class ThemeSwatch extends React.Component {
           <this.sC.Pixel
             // eslint-disable-next-line react/no-array-index-key
             key={`${col}${ind}`}
-            style={{ backgroundColor: col, height: 40 }}
+            style={{ backgroundColor: col }}
           />
         ))}
       </this.sC.Row>

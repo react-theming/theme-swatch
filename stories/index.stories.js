@@ -5,8 +5,72 @@ import styled from '@emotion/styled';
 
 import { storiesOf } from '@storybook/react';
 import { createSwatch } from '../src';
+import { palette as colorList } from '../src/test-utils/palette';
 
 const UniSwatch = createSwatch(styled);
+
+const colorArray = colorList.map(({ original }) => original);
+
+const StyledHolder = styled.div`
+  margin: 10px;
+  text-align: center;
+  span {
+    text-align: center;
+    font-size: 14px;
+  }
+  & > div {
+    margin-top: 6px;
+    box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.42);
+  }
+`;
+
+const Holder = ({ title, children }) => (
+  <StyledHolder>
+    <span>{title}</span>
+    {children}
+  </StyledHolder>
+);
+
+storiesOf('Theme Swatch with theme list', module).add('T1 1 colors', () => (
+  <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <Holder title="1">
+      <UniSwatch theme={colorArray.slice(0, 1)} size={128} />
+    </Holder>
+    <Holder title="2">
+      <UniSwatch theme={colorArray.slice(0, 2)} size={128} />
+    </Holder>
+    <Holder title="3">
+      <UniSwatch theme={colorArray.slice(0, 3)} size={128} />
+    </Holder>
+    <Holder title="4">
+      <UniSwatch theme={colorArray.slice(0, 4)} size={128} />
+    </Holder>
+    <Holder title="5">
+      <UniSwatch theme={colorArray.slice(0, 5)} size={128} />
+    </Holder>
+    <Holder title="6">
+      <UniSwatch theme={colorArray.slice(0, 6)} size={128} />
+    </Holder>
+    <Holder title="7">
+      <UniSwatch theme={colorArray.slice(0, 7)} size={128} />
+    </Holder>
+    <Holder title="8">
+      <UniSwatch theme={colorArray.slice(0, 8)} size={128} />
+    </Holder>
+    <Holder title="9">
+      <UniSwatch theme={colorArray.slice(0, 9)} size={128} />
+    </Holder>
+    <Holder title="10">
+      <UniSwatch theme={colorArray.slice(0, 10)} size={128} />
+    </Holder>
+    <Holder title="11">
+      <UniSwatch theme={colorArray.slice(0, 11)} size={128} />
+    </Holder>
+    <Holder title="12">
+      <UniSwatch theme={colorArray.slice(0, 12)} size={128} />
+    </Holder>
+  </div>
+));
 
 storiesOf('Theme Swatch with Universal Themes', module)
   .add('T1', () => (

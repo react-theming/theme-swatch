@@ -22,7 +22,7 @@ const YourComponent = () => {
 };
 ```
 
-![example](docs/swatches12.png)
+![example](https://raw.githubusercontent.com/react-theming/theme-swatch/master/docs/swatches12.png)
 
 ## Credits
 

@@ -1,4 +1,6 @@
-# theme-swatch
+[![npm version](https://badge.fury.io/js/%40react-theming%2Ftheme-swatch.svg)](https://badge.fury.io/js/%40react-theming%2Ftheme-swatch)
+
+# @react-theming/theme-swatch
 
 Install
 

@@ -4,3 +4,5 @@
 /node_modules
 /stories
 /docs
+/dist/test-utils/palette.js
+*.tgz

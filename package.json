@@ -6,7 +6,7 @@
   "author": "Oleg Proskurin <regx@usul.su>",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.8.6 || ^17.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
